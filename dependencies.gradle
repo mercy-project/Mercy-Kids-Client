@@ -20,6 +20,7 @@ ext {
     ]
 
     android = [
+            buildToolsVersion            : "29.0.3",
             minSdk                       : 19,
             targetSdk                    : 30,
             compileSdk                   : 30,
@@ -37,7 +38,7 @@ ext {
     corektx = '1.3.2'
     activityktx = '1.1.0'
     fragmentktx = '1.2.5'
-    constraintlayout='2.0.1'
+    constraintlayout='2.0.4'
     material='1.2.1'
     lifecycleext='2.2.0'
     webkit='1.4.0'
@@ -112,7 +113,7 @@ ext {
     ]
     
     firebaseDependencies = [
-            "com.google.firebase:firebase-bom:$firebasebom",
+            // 반드시 implementation platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
             "com.google.android.gms:play-services-basement:$playservice_basement",
             "com.google.android.gms:play-services-ads:$firebaseads",
             "com.google.firebase:firebase-analytics-ktx",
@@ -120,5 +121,10 @@ ext {
             "com.google.firebase:firebase-ads",
             "com.google.firebase:firebase-firestore-ktx"
     ]
-    
+
+
+    testDependencies = [
+            "androidx.test.ext:junit:1.1.2",
+            "androidx.test.espresso:espresso-core:3.3.0"
+    ]
 }
