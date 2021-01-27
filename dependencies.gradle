@@ -1,0 +1,124 @@
+ext {
+
+    def versionProperties = file('./release/version.properties')
+    if(!versionProperties.canRead()) {
+        new GradleException("Cannot read version.properties!")
+    }
+
+    def properties = new Properties()
+    properties.load(new FileInputStream(versionProperties))
+    def major = properties['major'].toString()
+    def minor = properties['minor'].toString()
+    def patch = properties['patch'].toString()
+
+    def appVersionName = "$major.$minor.$patch"
+    def appVersionCode = (major.toInteger() * 1000000) + (minor.toInteger() * 10000) + patch.toInteger()
+
+    compiler = [
+            javaVersion : JavaVersion.VERSION_1_8,
+            kotlinVersion : "1.4.21"
+    ]
+
+    android = [
+            minSdk                       : 19,
+            targetSdk                    : 30,
+            compileSdk                   : 30,
+            id                           : "com.mercy.kids.client",
+            versionName                  : appVersionName,
+            versionCode                  : appVersionCode,
+            testInstrumentationRunner    : "android.support.test.runner.AndroidJUnitRunner"
+    ]
+
+
+    // Libraries
+    kotlin = '1.4.21'
+    coroutine = '1.4.2'
+    appcompat = '1.2.0'
+    corektx = '1.3.2'
+    activityktx = '1.1.0'
+    fragmentktx = '1.2.5'
+    constraintlayout='2.0.1'
+    material='1.2.1'
+    lifecycleext='2.2.0'
+    webkit='1.4.0'
+    glide = '4.11.0'
+    
+    navigation='2.3.2'
+    roomversion='2.2.6'
+    roomdebug='1.0.6'
+    datastore='1.0.0-alpha06'
+    hilt = '2.28-alpha'
+    hiltandroid = '1.0.0-alpha02'
+
+    firebasebom = '25.12.0'
+    firebaseads = '19.4.0'
+    playcore = '1.8.0'
+    playservice_basement = '17.4.0'
+
+    retrofit = '2.9.0'
+    moshi = '1.11.0'
+    stetho = '1.5.1'
+    logginginterceptor = '4.9.0'
+    
+    
+    kotlinDependencies = [
+            "org.jetbrains.kotlin:kotlin-stdlib:$kotlin",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1",
+    ]
+    
+    androidComponentDependncies = [
+            "androidx.core:core-ktx:$corektx",
+            "androidx.activity:activity-ktx:$activityktx",
+            "androidx.fragment:fragment-ktx:$fragmentktx",
+            "androidx.lifecycle:lifecycle-extensions:$lifecycleext",
+            "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleext",
+            "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleext"
+    ]
+
+    uiDependencies = [
+            "androidx.appcompat:appcompat:$appcompat",
+            "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            "com.google.android.material:material:$material",
+            "androidx.webkit:webkit:$webkit",
+            "com.github.bumptech.glide:glide:$glide"
+    ]
+
+    navigationDependencies = [
+            "androidx.navigation:navigation-fragment-ktx:$navigation",
+            "androidx.navigation:navigation-ui-ktx:$navigation",
+            "androidx.navigation:navigation-testing:$navigation",
+            "androidx.navigation:navigation-fragment-ktx:$navigation",
+            "androidx.navigation:navigation-ui-ktx:$navigation"
+    ]
+    
+    diDependencies = [
+            "com.google.dagger:hilt-android:$hilt",
+            "com.google.dagger:hilt-android-compiler:$hilt",
+            "androidx.hilt:hilt-lifecycle-viewmodel:$hiltandroid",
+            "androidx.hilt:hilt-compiler:$hiltandroid",
+            "androidx.hilt:hilt-common:$hiltandroid",
+    ]
+    
+    networkDependencies = [
+            "com.squareup.retrofit2:retrofit:$retrofit",
+            "com.squareup.retrofit2:adapter-rxjava3:$retrofit",
+            "com.facebook.stetho:stetho-okhttp3:$stetho",
+            "com.squareup.okhttp3:logging-interceptor:$logginginterceptor",
+            "com.squareup.moshi:moshi:$moshi",
+            "com.squareup.moshi:moshi-kotlin:$moshi",
+            "com.squareup.moshi:moshi-kotlin-codegen:$moshi",
+            "com.squareup.retrofit2:converter-moshi:$retrofit",
+    ]
+    
+    firebaseDependencies = [
+            "com.google.firebase:firebase-bom:$firebasebom",
+            "com.google.android.gms:play-services-basement:$playservice_basement",
+            "com.google.android.gms:play-services-ads:$firebaseads",
+            "com.google.firebase:firebase-analytics-ktx",
+            "com.google.firebase:firebase-crashlytics-ktx",
+            "com.google.firebase:firebase-ads",
+            "com.google.firebase:firebase-firestore-ktx"
+    ]
+    
+}

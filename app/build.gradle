@@ -1,20 +1,24 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
-    compileSdkVersion 30
+
+    def ext = rootProject.extensions.ext
+    compileSdkVersion ext.android.compileSdk
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.mercy.kids.client"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId ext.android.id
+        versionName ext.android.versionName
+        versionCode ext.android.versionCode
+        minSdkVersion ext.android.minSdk
+        targetSdkVersion ext.android.targetSdk
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -23,10 +27,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
     kotlinOptions {
         jvmTarget = '1.8'
     }
