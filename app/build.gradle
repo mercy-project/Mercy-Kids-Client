@@ -3,8 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
+    // id 'com.google.gms.google-services'
+    // id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -43,13 +43,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -66,12 +59,17 @@ android {
             aaptOptions.cruncherEnabled = false // png 크기를 줄이기위해
             splits.abi.enable = false
             splits.density.enable = false // 화면밀도나 abi 에 따라 여러개의 apk 가 생성되는데 디버그 때 이를 해제
+
+            /*
             firebaseCrashlytics {
                 mappingFileUploadEnabled false
             }
+             */
         }
         release {
             debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -84,13 +82,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation platform("com.google.firebase:firebase-bom:$firebasebom")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation project(":base")
+    implementation project(":component")
+
+    implementation diDependencies
+    kapt diCompilerDependencies
+
+    implementation networkDependencies
+    kapt networkCompilerDependencies
 
     implementation kotlinDependencies
     implementation androidComponentDependncies
     implementation uiDependencies
     implementation navigationDependencies
-    implementation diDependencies
-    implementation networkDependencies
     implementation firebaseDependencies
 
     testImplementation 'junit:junit:4.13.1'

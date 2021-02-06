@@ -21,7 +21,7 @@ ext {
 
     android = [
             buildToolsVersion            : "29.0.3",
-            minSdk                       : 19,
+            minSdk                       : 23,
             targetSdk                    : 30,
             compileSdk                   : 30,
             id                           : "com.mercy.kids.client",
@@ -49,7 +49,7 @@ ext {
     roomdebug='1.0.6'
     datastore='1.0.0-alpha06'
     hilt = '2.28-alpha'
-    hiltandroid = '1.0.0-alpha02'
+    hiltandroid = '1.0.0-alpha01'
 
     firebasebom = '25.12.0'
     firebaseads = '19.4.0'
@@ -95,10 +95,13 @@ ext {
     
     diDependencies = [
             "com.google.dagger:hilt-android:$hilt",
-            "com.google.dagger:hilt-android-compiler:$hilt",
             "androidx.hilt:hilt-lifecycle-viewmodel:$hiltandroid",
-            "androidx.hilt:hilt-compiler:$hiltandroid",
-            "androidx.hilt:hilt-common:$hiltandroid",
+            "androidx.hilt:hilt-common:$hiltandroid"
+    ]
+
+    diCompilerDependencies = [
+            "com.google.dagger:hilt-android-compiler:$hilt",
+            "androidx.hilt:hilt-compiler:$hiltandroid"
     ]
     
     networkDependencies = [
@@ -108,17 +111,20 @@ ext {
             "com.squareup.okhttp3:logging-interceptor:$logginginterceptor",
             "com.squareup.moshi:moshi:$moshi",
             "com.squareup.moshi:moshi-kotlin:$moshi",
-            "com.squareup.moshi:moshi-kotlin-codegen:$moshi",
             "com.squareup.retrofit2:converter-moshi:$retrofit",
+    ]
+
+    networkCompilerDependencies = [
+            "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
     ]
     
     firebaseDependencies = [
             // 반드시 implementation platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
             "com.google.android.gms:play-services-basement:$playservice_basement",
-            "com.google.android.gms:play-services-ads:$firebaseads",
+            // "com.google.android.gms:play-services-ads:$firebaseads",
             "com.google.firebase:firebase-analytics-ktx",
             "com.google.firebase:firebase-crashlytics-ktx",
-            "com.google.firebase:firebase-ads",
+            // "com.google.firebase:firebase-ads",
             "com.google.firebase:firebase-firestore-ktx"
     ]
 

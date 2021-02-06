@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginHomeTextInput">
+        <attr name="textInputHint" format="reference"/>
+        <attr name="textInputErrorMessage" format="reference"/>
+        <attr name="textInputErrorEnabled" format="boolean"/>
+        <attr name="textInputErrorIcon" format="reference"/>
+        <attr name="textInputValidIcon" format="reference"/>
+    </declare-styleable>
+</resources>

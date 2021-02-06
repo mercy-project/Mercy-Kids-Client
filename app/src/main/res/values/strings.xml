@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Mercy-Kids-Client</string>
+    <string name="login_home_email_error_message">메일 형식이 올바르지 않습니다</string>
+    <string name="login_home_password_error_message">잘못된 비밀번호입니다. 다시 한번 확인해주세요</string>
+    <string name="login_home_email_hint">이메일 주소를 입력해주세요</string>
+    <string name="login_home_password_hint">비밀번호를 입력해주세요</string>
+    <string name="login_home_option_auto_login">자동로그인</string>
+    <string name="login_home_login_button">로그인</string>
+    <string name="login_home_google_login"><u>구글 계정으로 로그인</u></string>
+    <string name="login_home_signup">회원가입</string>
+    <string name="login_home_find">이메일/비밀번호 찾기</string>
 </resources>
