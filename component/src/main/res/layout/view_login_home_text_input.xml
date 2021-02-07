@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.mercy.kids.component.edittext.LoginHomeTextInput.Model"/>
+    </data>
+
+    <merge
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_login_home_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="8dp"
+            android:background="@drawable/login_home_edittext_bg"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="48dp"
+            android:hint="@{data.hint}"
+            android:textColor="#323232"
+            android:textColorHint="#c7c7c7"
+            android:inputType="text"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_login_home_valid_indicator"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="20dp"
+            android:elevation="9dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="@id/et_login_home_text_input"
+            app:layout_constraintBottom_toBottomOf="@id/et_login_home_text_input"
+            app:layout_constraintStart_toStartOf="@id/et_login_home_text_input"
+            app:layout_constraintEnd_toEndOf="@id/et_login_home_text_input"
+            tools:src="@drawable/ic_baseline_check_circle_outline_24"/>
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:id="@+id/tv_login_home_input_invalid_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxHeight="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#fd3d41"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="11sp"
+            android:autoSizeMaxTextSize="12sp"
+            android:visibility="gone"
+            android:text="@{data.errorMessage}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_login_home_text_input"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="메일형식이 올바르지 않습니다"
+            tools:visibility="visible"
+            tools:targetApi="o"
+            tools:ignore="SmallSp" />
+
+    </merge>
+
+</layout>

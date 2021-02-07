@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Component.LoginHomeTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorEnabled">true</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxCornerRadiusTopStart">18dp</item>
+        <item name="boxCornerRadiusTopEnd">18dp</item>
+        <item name="boxCornerRadiusBottomStart">18dp</item>
+        <item name="boxCornerRadiusBottomEnd">18dp</item>
+        <item name="boxBackgroundColor">#FFFFFF</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxStrokeColor">@drawable/login_home_edittext_bg</item>
+    </style>
+</resources>
