@@ -84,6 +84,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation project(":base")
     implementation project(":component")
+    implementation project(":remote")
 
     implementation diDependencies
     kapt diCompilerDependencies
