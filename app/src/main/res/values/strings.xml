@@ -9,4 +9,6 @@
     <string name="login_home_google_login"><u>구글 계정으로 로그인</u></string>
     <string name="login_home_signup">회원가입</string>
     <string name="login_home_find">이메일/비밀번호 찾기</string>
+    <string name="sign_up_header_welcome">환영해요</string>
+    <string name="sign_up_header_title">회원가입하기</string>
 </resources>
