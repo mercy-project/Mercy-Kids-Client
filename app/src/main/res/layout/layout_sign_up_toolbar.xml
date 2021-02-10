@@ -13,9 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="3dp"
-        app:title="회원가입하기"
-        app:titleTextAppearance="@style/TextAppearance.CollapseToolbar.CollapseTitle"
-        app:titleTextColor="#205072"
-        app:layout_collapseMode="pin"/>
+        app:layout_collapseMode="pin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_toolbar_title"
+            android:textSize="17sp"
+            android:textColor="#205072" />
+
+    </androidx.appcompat.widget.Toolbar>
 
 </layout>

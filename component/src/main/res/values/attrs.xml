@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LoginHomeTextInput">
+    <declare-styleable name="TextInputAttrs">
         <attr name="textInputHint" format="reference"/>
         <attr name="textInputErrorMessage" format="reference"/>
         <attr name="textInputErrorEnabled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="LoginHomeTextInput">
+        <attr name="textInputHint"/>
+        <attr name="textInputErrorMessage" />
+        <attr name="textInputErrorEnabled"/>
         <attr name="textInputErrorIcon" format="reference"/>
         <attr name="textInputValidIcon" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="SignUpTextInput">
+        <attr name="textInputHint"/>
+        <attr name="textInputTitle" format="reference"/>
+        <attr name="textInputErrorMessage" />
+        <attr name="textInputSubButtonText" format="reference"/>
+        <attr name="textInputShowSubButton" format="boolean"/>
+        <attr name="textInputType" format="enum">
+            <enum name="plain_text" value="0"/>
+            <enum name="name" value="1"/>
+            <enum name="email" value="2"/>
+            <enum name="email_confirm" value="3"/>
+            <enum name="password" value="4"/>
+            <enum name="password_confirm" value="5"/>
+            <enum name="birth" value="6"/>
+            <enum name="phone" value="7"/>
+        </attr>
     </declare-styleable>
 </resources>

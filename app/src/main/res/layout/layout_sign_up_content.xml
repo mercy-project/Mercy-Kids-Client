@@ -10,45 +10,87 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF">
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        android:background="#FFFFFF"
+        app:layout_anchor="@id/ab_sign_up"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <TextView
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
                 android:id="@+id/test1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="텍스트텍스트"/>
+                android:layout_height="wrap_content"
+                app:textInputTitle="@string/sign_up_contents_name_title"
+                app:textInputHint="@string/sign_up_contents_name_hint"
+                app:textInputErrorMessage="@string/sign_up_contents_name_error"
+                app:textInputType="name"/>
 
-            <TextView
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
                 android:id="@+id/test2"
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="텍스트텍스트"
-                app:layout_constraintTop_toBottomOf="@+id/test1"/>
+                android:layout_height="wrap_content"
+                app:textInputTitle="@string/sign_up_contents_email_title"
+                app:textInputHint="@string/sign_up_contents_email_hint"
+                app:textInputErrorMessage="@string/sign_up_contents_email_error"
+                app:textInputShowSubButton="true"
+                app:textInputSubButtonText="@string/sign_up_contents_email_button"
+                app:textInputType="email"/>
 
-            <TextView
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
                 android:id="@+id/test3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="텍스트텍스트"
-                app:layout_constraintTop_toBottomOf="@id/test2"/>
+                android:layout_height="wrap_content"
+                app:textInputHint="@string/sign_up_contents_email_confirm_hint"
+                app:textInputErrorMessage="@string/sign_up_contents_email_confirm_error"
+                app:textInputShowSubButton="true"
+                app:textInputSubButtonText="@string/sign_up_contents_email_confirm_button"
+                app:textInputType="email_confirm"/>
 
-            <TextView
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
                 android:id="@+id/test4"
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="텍스트텍스트"
-                app:layout_constraintTop_toBottomOf="@id/test3"/>
+                android:layout_height="wrap_content"
+                app:textInputTitle="@string/sign_up_contents_password_title"
+                app:textInputHint="@string/sign_up_contents_password_hint"
+                app:textInputErrorMessage="@string/sign_up_contents_password_error"
+                app:textInputType="password"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
+                android:id="@+id/test5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textInputHint="@string/sign_up_contents_password_confirm_hint"
+                app:textInputErrorMessage="@string/sign_up_contents_password_confirm_error"
+                app:textInputType="password_confirm"/>
+
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
+                android:id="@+id/test6"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textInputTitle="@string/sign_up_contents_birth_title"
+                app:textInputHint="@string/sign_up_contents_birth_hint"
+                app:textInputType="birth"/>
+
+            <com.mercy.kids.component.edittext.signup.SignUpTextInput
+                android:id="@+id/test7"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textInputTitle="@string/sign_up_contents_phone_title"
+                app:textInputHint="@string/sign_up_contents_phone_hint"
+                app:textInputType="phone"/>
+
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
 
 </layout>

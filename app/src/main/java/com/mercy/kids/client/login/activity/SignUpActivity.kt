@@ -29,12 +29,5 @@ class SignUpActivity(
         setToolbar(binding.layoutSignUpToolbar.tbSignUp, R.drawable.ic_baseline_arrow_back_24)
     }
 
-
-    fun setCollapsingToolbar() = with(binding.abSignUp) {
-
-
-
-    }
-
 }
 

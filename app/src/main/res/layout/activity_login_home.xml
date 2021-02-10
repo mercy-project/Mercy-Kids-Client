@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.mercy.kids.component.edittext.LoginHomeTextInput
+        <com.mercy.kids.component.edittext.loginhome.LoginHomeTextInput
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,11 +42,11 @@
             app:textInputErrorMessage="@string/login_home_email_error_message"
             app:textInputHint="@string/login_home_email_hint" />
 
-        <com.mercy.kids.component.edittext.LoginHomeTextInput
+        <com.mercy.kids.component.edittext.loginhome.LoginHomeTextInput
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login_home_comfirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email"
@@ -55,7 +55,7 @@
             app:textInputHint="@string/login_home_password_hint" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/btn_login_home_comfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
@@ -66,13 +66,13 @@
             android:layout_margin="20dp"
             app:backgroundTint="#00be90"
             app:cornerRadius="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton4"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login_home_google"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton4"
+            android:id="@+id/btn_login_home_google"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,11 +83,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_home_comfirm"
             app:rippleColor="#99AAAAAA" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton3"
+            android:id="@+id/btn_login_home_sign_up"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,11 +114,11 @@
             android:textColor="#323232"
             android:textStyle="bold"
             android:onClick="@{(v) -> viewModel.onFindAccountButtonClicked.invoke()}"
-            app:layout_constraintBottom_toBottomOf="@+id/materialButton3"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_login_home_sign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/materialButton3"
-            app:layout_constraintTop_toTopOf="@+id/materialButton3"
+            app:layout_constraintStart_toEndOf="@+id/btn_login_home_sign_up"
+            app:layout_constraintTop_toTopOf="@+id/btn_login_home_sign_up"
             app:rippleColor="#99AAAAAA" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

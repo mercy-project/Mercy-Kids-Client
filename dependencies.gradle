@@ -34,6 +34,7 @@ ext {
     // Libraries
     kotlin = '1.4.21'
     coroutine = '1.4.2'
+    flowbinding = '1.0.0'
     appcompat = '1.2.0'
     corektx = '1.3.2'
     activityktx = '1.1.0'
@@ -65,7 +66,7 @@ ext {
     kotlinDependencies = [
             "org.jetbrains.kotlin:kotlin-stdlib:$kotlin",
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine",
-            "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1"
     ]
     
     androidComponentDependncies = [
@@ -75,6 +76,22 @@ ext {
             "androidx.lifecycle:lifecycle-extensions:$lifecycleext",
             "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleext",
             "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleext"
+    ]
+    
+    flowBindingDependencies = [
+            "io.github.reactivecircus.flowbinding:flowbinding-android:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-material:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-activity:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-core:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-navigation:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-preference:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-viewpager:$flowbinding",
+            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:$flowbinding",
     ]
 
     uiDependencies = [
@@ -119,7 +136,7 @@ ext {
     ]
     
     firebaseDependencies = [
-            // 반드시 implementation platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
+            // 반드시 platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
             "com.google.android.gms:play-services-basement:$playservice_basement",
             // "com.google.android.gms:play-services-ads:$firebaseads",
             "com.google.firebase:firebase-analytics-ktx",

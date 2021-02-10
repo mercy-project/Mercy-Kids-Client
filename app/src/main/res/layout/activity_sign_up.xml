@@ -43,14 +43,12 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <include
-                android:id="@+id/layout_sign_up_content"
-                layout="@layout/layout_sign_up_content"
-                bind:viewModel="@{viewModel}"
-                app:layout_anchor="@id/ab_sign_up"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
         </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/layout_sign_up_content"
+            layout="@layout/layout_sign_up_content"
+            bind:viewModel="@{viewModel}" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     
