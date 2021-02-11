@@ -9,7 +9,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.mercy.kids.component.databinding.ViewSignUpTextInputBinding
 
-sealed class Validator(
+abstract class Validator(
     private val binding: ViewSignUpTextInputBinding
 ): TextWatcher {
 
@@ -39,15 +39,8 @@ class NameValidator(binding: ViewSignUpTextInputBinding): Validator(binding) {
 
 class EmailValidator(binding: ViewSignUpTextInputBinding): Validator(binding) {
     private val emailMatcher = Patterns.EMAIL_ADDRESS
-
     override val validate: (CharSequence) -> Boolean = {
         emailMatcher.matcher(it).matches()
-    }
-}
-
-class EmailConfirmValidator(binding: ViewSignUpTextInputBinding): Validator(binding) {
-    override val validate: (CharSequence) -> Boolean = {
-        false
     }
 }
 
@@ -57,8 +50,6 @@ class PasswordValidator(binding: ViewSignUpTextInputBinding): Validator(binding)
     }
 }
 
-class PasswordConfirmValidator(binding: ViewSignUpTextInputBinding): Validator(binding) {
-    override val validate: (CharSequence) -> Boolean = {
-        false
-    }
-}
+class PasswordConfirmValidator(
+    view: SignUpTextInput, override val validate: (CharSequence) -> Boolean,
+): Validator(view.binding)

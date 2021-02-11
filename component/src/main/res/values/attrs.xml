@@ -16,7 +16,6 @@
         <attr name="textInputHint"/>
         <attr name="textInputTitle" format="reference"/>
         <attr name="textInputErrorMessage" />
-        <attr name="textInputSubButtonText" format="reference"/>
         <attr name="textInputShowSubButton" format="boolean"/>
         <attr name="textInputType" format="enum">
             <enum name="plain_text" value="0"/>

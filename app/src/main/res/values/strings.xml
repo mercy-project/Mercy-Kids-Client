@@ -22,9 +22,12 @@
     <string name="sign_up_contents_email_title">이메일(아이디)</string>
     <string name="sign_up_contents_email_hint">email@naver.com</string>
     <string name="sign_up_contents_email_button">인증메일 발송</string>
+    <string name="sign_up_contents_email_button_send">발송 완료</string>
+    <string name="sign_up_contents_email_button_resend">재발송</string>
     <string name="sign_up_contents_email_error">올바른 이메일 주소를 입력하세요</string>
     <string name="sign_up_contents_email_confirm_hint">인증번호 n자리를 입력해주세요</string>
     <string name="sign_up_contents_email_confirm_button">확인</string>
+    <string name="sign_up_contents_email_confirm_button_ok">인증완료!</string>
     <string name="sign_up_contents_email_confirm_error">60:00</string>
     <string name="sign_up_contents_password_title">비밀번호(영문,숫자조합 최소 6자 이상)</string>
     <string name="sign_up_contents_password_hint">비밀번호를 입력해주세요(영문,숫자조합 최소 6자 이상)</string>

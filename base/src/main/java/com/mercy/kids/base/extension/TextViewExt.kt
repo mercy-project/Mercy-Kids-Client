@@ -24,7 +24,7 @@ fun TextView.setTextResWithState(@StringRes textRes: Int?, nullState: Int = View
     setTextWithState(null, nullState)
 }
 
-fun TextView.setTextWithState(text: String? = null, nullState: Int = View.GONE) = text?.let {
+fun TextView.setTextWithState(text: CharSequence? = null, nullState: Int = View.GONE) = text?.let {
     this.text = it
     this.visibility = View.VISIBLE
 } ?: run {

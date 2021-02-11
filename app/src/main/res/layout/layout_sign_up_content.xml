@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -26,6 +27,7 @@
                 android:id="@+id/test1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 app:textInputTitle="@string/sign_up_contents_name_title"
                 app:textInputHint="@string/sign_up_contents_name_hint"
                 app:textInputErrorMessage="@string/sign_up_contents_name_error"
@@ -40,7 +42,8 @@
                 app:textInputHint="@string/sign_up_contents_email_hint"
                 app:textInputErrorMessage="@string/sign_up_contents_email_error"
                 app:textInputShowSubButton="true"
-                app:textInputSubButtonText="@string/sign_up_contents_email_button"
+                app:textInputSubButtonText="@{viewModel.emailButtonText}"
+                app:textInputSubButtonClick="@{viewModel.emailButtonClick}"
                 app:textInputType="email"/>
 
             <com.mercy.kids.component.edittext.signup.SignUpTextInput
@@ -50,7 +53,8 @@
                 app:textInputHint="@string/sign_up_contents_email_confirm_hint"
                 app:textInputErrorMessage="@string/sign_up_contents_email_confirm_error"
                 app:textInputShowSubButton="true"
-                app:textInputSubButtonText="@string/sign_up_contents_email_confirm_button"
+                app:textInputSubButtonText="@{viewModel.emailConfirmButtonText}"
+                app:textInputSubButtonClick="@{viewModel.emailConfirmButtonClick}"
                 app:textInputType="email_confirm"/>
 
             <com.mercy.kids.component.edittext.signup.SignUpTextInput

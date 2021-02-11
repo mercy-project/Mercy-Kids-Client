@@ -6,11 +6,14 @@ import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivityUseCase(private val activity: AppCompatActivity) {
 
-    val res: Resources get() = activity.resources
+    protected val res: Resources get() = activity.resources
+
+    fun resString(@StringRes id: Int) = res.getString(id)
 
     fun <T: AppCompatActivity> startActivity(activityClass: Class<T>, params: Bundle) {
         val intent = Intent(activity, activityClass).apply {
