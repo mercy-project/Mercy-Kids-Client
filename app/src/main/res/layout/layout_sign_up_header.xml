@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mercy.kids.client.login.viewmodel.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="?attr/actionBarSize"
+        tools:background="#64e3a7">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign_up_title_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/sign_up_header_welcome"
+            android:textColor="#205072"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_sign_up_header_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign_up_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/sign_up_header_title"
+            android:textColor="#205072"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_title_welcome" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

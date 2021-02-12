@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mercy.kids.client.login.viewmodel.SignUpViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="3dp"
+        app:layout_collapseMode="pin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_toolbar_title"
+            android:textSize="17sp"
+            android:textColor="#205072" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>

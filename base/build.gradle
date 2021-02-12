@@ -47,7 +47,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation platform("com.google.firebase:firebase-bom:$firebasebom")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     implementation diDependencies
     kapt diCompilerDependencies

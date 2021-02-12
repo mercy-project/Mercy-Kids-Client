@@ -1,4 +1,4 @@
-package com.mercy.kids.component.edittext
+package com.mercy.kids.component.edittext.loginhome
 
 import android.content.Context
 import android.text.Editable
@@ -26,7 +26,7 @@ class LoginHomeTextInput @JvmOverloads constructor(
             @StringRes val errorMessage: Int = 0,
             val errorEnabled: Boolean = false,
             @DrawableRes val errorIcon: Int = 0,
-            @DrawableRes val validIcon: Int = 0
+            @DrawableRes val validIcon: Int = 0,
     )
 
     private val binding = ViewLoginHomeTextInputBinding.inflate(LayoutInflater.from(context), this, true)

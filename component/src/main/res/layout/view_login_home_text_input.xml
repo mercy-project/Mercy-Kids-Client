@@ -7,7 +7,7 @@
     <data>
         <variable
             name="data"
-            type="com.mercy.kids.component.edittext.LoginHomeTextInput.Model"/>
+            type="com.mercy.kids.component.edittext.loginhome.LoginHomeTextInput.Model"/>
     </data>
 
     <merge
