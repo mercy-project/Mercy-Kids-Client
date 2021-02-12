@@ -13,4 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Widget.FindAccount.TabItemText" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">#205072</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

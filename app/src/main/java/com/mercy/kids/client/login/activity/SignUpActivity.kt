@@ -1,6 +1,7 @@
 package com.mercy.kids.client.login.activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.appbar.AppBarLayout
@@ -32,6 +33,14 @@ class SignUpActivity(
         setToolbar(binding.layoutSignUpToolbar.tbSignUp, R.drawable.ic_baseline_arrow_back_24)
         viewModel.initialize()
         setExternalValidator()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId) {
+        android.R.id.home -> {
+            onBackPressed()
+            true
+        }
+        else -> false
     }
 
     private fun setExternalValidator() = with(binding.layoutSignUpContent) {
