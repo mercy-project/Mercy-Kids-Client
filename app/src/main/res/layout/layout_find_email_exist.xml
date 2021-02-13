@@ -3,9 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="parentViewModel"
+            type="com.mercy.kids.client.login.viewmodel.FindAccountViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:tag="view_exist"
         android:padding="24dp">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -14,8 +21,9 @@
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_check_circle_outline_24"
             android:layout_marginBottom="16dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintVertical_bias="0.15"
+            app:layout_constraintVertical_bias="0"
             app:layout_constraintBottom_toTopOf="@+id/tv_find_email_exist_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

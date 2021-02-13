@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="parentViewModel"
+            type="com.mercy.kids.client.login.viewmodel.FindAccountViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="24dp"
-        tools:layout_height="wrap_content">
+        android:tag="view_normal"
+        android:padding="24dp">
 
         <com.mercy.kids.component.edittext.signup.SignUpTextInput
             android:id="@+id/text_input_find_email"
@@ -34,6 +39,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
+            android:onClick="@{(v) -> parentViewModel.confirmCheckEmailAddress.invoke()}"
             app:backgroundTint="#00be90"
             app:cornerRadius="16dp"
             app:layout_constraintTop_toBottomOf="@id/text_input_find_email"

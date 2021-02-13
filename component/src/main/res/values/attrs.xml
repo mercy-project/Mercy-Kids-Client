@@ -28,4 +28,9 @@
             <enum name="phone" value="7"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="StateLayout">
+        <attr name="stateTags" format="string"/>
+        <attr name="initialState" format="string"/>
+    </declare-styleable>
 </resources>

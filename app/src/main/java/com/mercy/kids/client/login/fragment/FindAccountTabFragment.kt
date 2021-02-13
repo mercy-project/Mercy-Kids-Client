@@ -1,11 +1,13 @@
 package com.mercy.kids.client.login.fragment
 
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.mercy.kids.base.DataBindingFragment
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.FragmentFindEmailBinding
 import com.mercy.kids.client.databinding.FragmentFindPasswordBinding
+import com.mercy.kids.client.login.viewmodel.FindAccountViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -36,8 +38,10 @@ class FindAccountPagerAdapter @Inject constructor(
 class FindEmailFragment: DataBindingFragment<FragmentFindEmailBinding>() {
     override val layoutResId: Int = R.layout.fragment_find_email
 
-    override val bindingVariable: (FragmentFindEmailBinding) -> Unit = {
+    private val parentViewModel = activityViewModels<FindAccountViewModel>()
 
+    override val bindingVariable: (FragmentFindEmailBinding) -> Unit = {
+        binding.parentViewModel = parentViewModel.value
     }
 }
 
@@ -45,7 +49,9 @@ class FindEmailFragment: DataBindingFragment<FragmentFindEmailBinding>() {
 class FindPasswordFragment: DataBindingFragment<FragmentFindPasswordBinding>() {
     override val layoutResId: Int = R.layout.fragment_find_password
 
-    override val bindingVariable: (FragmentFindPasswordBinding) -> Unit = {
+    private val parentViewModel = activityViewModels<FindAccountViewModel>()
 
+    override val bindingVariable: (FragmentFindPasswordBinding) -> Unit = {
+        binding.parentViewModel = parentViewModel.value
     }
 }
