@@ -56,6 +56,7 @@ ext {
     firebaseads = '19.4.0'
     playcore = '1.8.0'
     playservice_basement = '17.4.0'
+    playservice_auth = '19.0.9'
 
     retrofit = '2.9.0'
     moshi = '1.11.0'
@@ -138,6 +139,7 @@ ext {
     firebaseDependencies = [
             // 반드시 platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
             "com.google.android.gms:play-services-basement:$playservice_basement",
+            "com.google.android.gms:play-services-auth:$playservice_auth",
             // "com.google.android.gms:play-services-ads:$firebaseads",
             "com.google.firebase:firebase-analytics-ktx",
             "com.google.firebase:firebase-crashlytics-ktx",
