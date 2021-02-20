@@ -44,10 +44,8 @@ class SignUpActivity(
     }
 
     private fun setExternalValidator() = with(binding.layoutSignUpContent) {
-        test5.externalValidator = PasswordConfirmValidator(test5) {
-            logMessage(test4.text ?: "null")
-            logMessage(it.toString())
-            return@PasswordConfirmValidator it.toString() == test4.text
+        textInputSignUpPasswordConfirm.externalValidator = PasswordConfirmValidator(textInputSignUpPasswordConfirm) {
+            return@PasswordConfirmValidator it.toString() == textInputSignUpPassword.text
         }
     }
 

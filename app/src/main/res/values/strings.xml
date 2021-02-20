@@ -31,6 +31,7 @@
     <string name="sign_up_contents_email_button_resend">재발송</string>
     <string name="sign_up_contents_email_error">올바른 이메일 주소를 입력하세요</string>
     <string name="sign_up_contents_email_confirm_hint">인증번호 n자리를 입력해주세요</string>
+    <string name="sign_up_contents_email_confirm_expired">제한 시간이 초과되었습니다. 다시 시도해주세요</string>
     <string name="sign_up_contents_email_confirm_button">확인</string>
     <string name="sign_up_contents_email_confirm_button_ok">인증완료!</string>
     <string name="sign_up_contents_email_confirm_error">60:00</string>
@@ -43,10 +44,12 @@
     <string name="sign_up_contents_birth_hint">생년월일 입력</string>
     <string name="sign_up_contents_phone_title">휴대전화번호</string>
     <string name="sign_up_contents_phone_hint">01012345678</string>
-    <string name="find_account_password">비밀번호 찾기</string>
-    <string name="find_account_email">이메일 찾기</string>
+    <string name="sign_up_terms_agree">이용약관 동의</string>
+    <string name="sign_up_personal_info_agree">개인정보 이용동의</string>
 
     <!-- 이메일/비밀번호 찾기 화면 -->
+    <string name="find_account_password">비밀번호 찾기</string>
+    <string name="find_account_email">이메일 찾기</string>
     <string name="find_email_text_input_hint">가입한 이메일 주소를 입력해주세요</string>
     <string name="find_account_title">이메일/비밀번호 찾기</string>
     <string name="find_password_description">! 가입에 사용하신 이메일 주소를 입력하세요.\n해당 이메일 주소로 비밀번호 재설정 링크를 보내드립니다.</string>

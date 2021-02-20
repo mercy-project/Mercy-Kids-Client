@@ -24,7 +24,6 @@
             android:textSize="15sp"
             android:textColor="#205072"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"
             safeTextRes="@{data.title}"
             android:visibility="gone"
             app:layout_constraintHorizontal_bias="0.0"
@@ -47,7 +46,7 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintHorizontal_bias="1.0"
             app:autoSizeMaxTextSize="12sp"
-            app:autoSizeMinTextSize="10sp"
+            app:autoSizeMinTextSize="3sp"
             app:autoSizeTextType="uniform"
             app:layout_constraintStart_toEndOf="@id/tv_sign_up_title"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +60,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/sign_up_text_input_bg"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_title"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_title">
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/et_sign_up_text_input"
