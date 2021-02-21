@@ -16,12 +16,15 @@ android {
         versionCode ext.android.versionCode
         minSdkVersion ext.android.minSdk
         targetSdkVersion ext.android.targetSdk
-
         ndk {
             abiFilters("armeabi-v7a", "x86", "arm64-v8a", "x86_64")
         }
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        buildConfigField("String", "GOOGLE_OAUTH2_CLIENT_KEY", "\"${properties.getProperty("google.oauth.client.id")}\"")
     }
 
     buildTypes {

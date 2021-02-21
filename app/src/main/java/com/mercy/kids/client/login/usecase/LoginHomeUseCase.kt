@@ -6,4 +6,11 @@ import javax.inject.Inject
 
 class LoginHomeUseCase constructor(
         private val activity: LoginHomeActivity
-): BaseActivityUseCase(activity)
+): BaseActivityUseCase(activity) {
+
+
+
+
+
+
+}

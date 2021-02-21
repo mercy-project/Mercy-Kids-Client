@@ -1,4 +1,4 @@
-package com.mercy.kids.client.main.ui
+package com.mercy.kids.client.main.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
