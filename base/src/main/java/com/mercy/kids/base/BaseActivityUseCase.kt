@@ -50,9 +50,8 @@ open class BaseActivityUseCase(private val activity: AppCompatActivity) {
         return activity.intent.extras?.get(key) as? T
     }
 
-    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
+    open fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
         return false
     }
-
 
 }

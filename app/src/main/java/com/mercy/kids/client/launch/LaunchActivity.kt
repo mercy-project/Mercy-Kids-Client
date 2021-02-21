@@ -17,8 +17,10 @@ class LaunchActivity: AppCompatActivity() {
 
     private fun checkGoogleSignInAccountExist() = GoogleSignIn.getLastSignedInAccount(this)?.let {
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
     } ?: run {
         startActivity(Intent(this, LoginHomeActivity::class.java))
+        finish()
     }
 
 }
