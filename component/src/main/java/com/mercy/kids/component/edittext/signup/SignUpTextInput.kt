@@ -76,6 +76,7 @@ class SignUpTextInput @JvmOverloads constructor(
         get() = binding.tvSignUpErrorMessage.text
         set(value) {
             binding.tvSignUpErrorMessage.text = value
+            binding.tvSignUpErrorMessage.isVisible = value.isNotEmpty()
             field = value
         }
 

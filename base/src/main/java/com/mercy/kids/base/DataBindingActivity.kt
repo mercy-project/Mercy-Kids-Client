@@ -22,11 +22,13 @@ abstract class DataBindingActivity<V: ViewDataBinding>: AppCompatActivity() {
         bindingVariable.invoke(binding)
     }
 
-    open fun setToolbar(toolbar: Toolbar, @DrawableRes homeIconRes: Int) {
+    open fun setToolbar(toolbar: Toolbar, @DrawableRes homeIconRes: Int? = null) {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setHomeAsUpIndicator(homeIconRes)
+        homeIconRes?.let {
+            supportActionBar?.setHomeAsUpIndicator(it)
+        }
     }
 
 }

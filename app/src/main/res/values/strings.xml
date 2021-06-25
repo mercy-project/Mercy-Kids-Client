@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Mercy-Kids-Client</string>
 
+    <!-- 공통 -->
+    <string name="confirm">확인</string>
+    <string name="close">닫기</string>
+    <string name="cancel">취소</string>
+
     <!-- 로그인 홈 화면 -->
     <string name="login_home_email_error_message">메일 형식이 올바르지 않습니다</string>
     <string name="login_home_password_error_message">잘못된 비밀번호입니다. 다시 한번 확인해주세요</string>
@@ -26,6 +31,7 @@
     <string name="sign_up_contents_email_button_resend">재발송</string>
     <string name="sign_up_contents_email_error">올바른 이메일 주소를 입력하세요</string>
     <string name="sign_up_contents_email_confirm_hint">인증번호 n자리를 입력해주세요</string>
+    <string name="sign_up_contents_email_confirm_expired">제한 시간이 초과되었습니다. 다시 시도해주세요</string>
     <string name="sign_up_contents_email_confirm_button">확인</string>
     <string name="sign_up_contents_email_confirm_button_ok">인증완료!</string>
     <string name="sign_up_contents_email_confirm_error">60:00</string>
@@ -38,5 +44,17 @@
     <string name="sign_up_contents_birth_hint">생년월일 입력</string>
     <string name="sign_up_contents_phone_title">휴대전화번호</string>
     <string name="sign_up_contents_phone_hint">01012345678</string>
+    <string name="sign_up_terms_agree">이용약관 동의</string>
+    <string name="sign_up_personal_info_agree">개인정보 이용동의</string>
+
+    <!-- 이메일/비밀번호 찾기 화면 -->
+    <string name="find_account_password">비밀번호 찾기</string>
+    <string name="find_account_email">이메일 찾기</string>
+    <string name="find_email_text_input_hint">가입한 이메일 주소를 입력해주세요</string>
+    <string name="find_account_title">이메일/비밀번호 찾기</string>
+    <string name="find_password_description">! 가입에 사용하신 이메일 주소를 입력하세요.\n해당 이메일 주소로 비밀번호 재설정 링크를 보내드립니다.</string>
+    <string name="find_password_text_input_hint">가입한 이메일 주소를 입력해주세요</string>
+    <string name="find_email_exist">가입된 이메일입니다.</string>
+    <string name="find_email_empty">입력한 정보와\n일치하는 이메일이 없습니다.\n다시 한번 확인해 주세요 :)</string>
 
 </resources>
