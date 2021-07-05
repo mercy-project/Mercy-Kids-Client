@@ -5,11 +5,16 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
-open class BaseActivityUseCase(private val activity: AppCompatActivity) {
+open class BaseActivityUseCase(
+    private val activity: AppCompatActivity,
+    private val rootView: View
+) {
 
     protected val res: Resources get() = activity.resources
 
@@ -48,6 +53,14 @@ open class BaseActivityUseCase(private val activity: AppCompatActivity) {
 
     fun <T> getIntentValue(key: String) : T? {
         return activity.intent.extras?.get(key) as? T
+    }
+
+    fun snackBar(@StringRes message: Int) {
+        Snackbar.make(rootView, message, Snackbar.LENGTH_SHORT).show()
+    }
+
+    fun snackBar(message: String) {
+        Snackbar.make(rootView, message, Snackbar.LENGTH_SHORT).show()
     }
 
     open fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {

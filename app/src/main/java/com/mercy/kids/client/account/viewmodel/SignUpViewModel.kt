@@ -1,30 +1,34 @@
-package com.mercy.kids.client.login.viewmodel
+package com.mercy.kids.client.account.viewmodel
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.viewModelScope
 import com.mercy.kids.base.BaseViewModel
-import com.mercy.kids.base.extension.*
+import com.mercy.kids.base.extension.minuteSecond
+import com.mercy.kids.base.extension.safeValue
+import com.mercy.kids.base.extension.timerFlow
 import com.mercy.kids.client.R
-import com.mercy.kids.client.login.usecase.SignUpUseCase
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.ticker
+import com.mercy.kids.client.account.usecase.SignUpUseCase
+import com.mercy.kids.repository.AccountRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.take
-import java.time.LocalDateTime
+import kotlinx.coroutines.launch
 import java.util.*
-import java.util.concurrent.TimeUnit
-import kotlin.concurrent.timer
-import kotlin.coroutines.coroutineContext
 import kotlin.time.ExperimentalTime
-import kotlin.time.minutes
-import kotlin.time.seconds
 
 class SignUpViewModel @ViewModelInject constructor(
-        @Assisted val savedStateHandle: SavedStateHandle
-): BaseViewModel<SignUpUseCase>() {
+    useCase: SignUpUseCase,
+    private val accountRepository: AccountRepository,
+    @Assisted val savedStateHandle: SavedStateHandle
+): BaseViewModel<SignUpUseCase>(useCase) {
 
     private var emailConfirmTimerJob: Job? = null
 
@@ -82,7 +86,6 @@ class SignUpViewModel @ViewModelInject constructor(
                     }
         }
     }
-
 
     override fun onCleared() {
         emailConfirmTimerJob?.cancel()

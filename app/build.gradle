@@ -3,8 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    // id 'com.google.gms.google-services'
-    // id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -107,6 +105,7 @@ dependencies {
     implementation project(":base")
     implementation project(":component")
     implementation project(":remote")
+    implementation project(":repository")
 
     implementation diDependencies
     kapt diCompilerDependencies
@@ -121,6 +120,6 @@ dependencies {
     implementation navigationDependencies
     implementation firebaseDependencies
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation testDependencies
 }

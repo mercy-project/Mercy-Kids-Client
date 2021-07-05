@@ -1,4 +1,4 @@
-package com.mercy.kids.client.login.fragment
+package com.mercy.kids.client.account.fragment
 
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
@@ -7,7 +7,7 @@ import com.mercy.kids.base.DataBindingFragment
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.FragmentFindEmailBinding
 import com.mercy.kids.client.databinding.FragmentFindPasswordBinding
-import com.mercy.kids.client.login.viewmodel.FindAccountViewModel
+import com.mercy.kids.client.account.viewmodel.FindAccountViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

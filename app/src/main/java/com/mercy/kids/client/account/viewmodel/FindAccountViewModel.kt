@@ -1,4 +1,4 @@
-package com.mercy.kids.client.login.viewmodel
+package com.mercy.kids.client.account.viewmodel
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
@@ -7,19 +7,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.mercy.kids.base.BaseViewModel
 import com.mercy.kids.base.extension.safeValue
-import com.mercy.kids.client.login.usecase.FindAccountUseCase
-import kotlin.random.Random
+import com.mercy.kids.client.account.usecase.FindAccountUseCase
+import com.mercy.kids.repository.AccountRepository
 
 class FindAccountViewModel @ViewModelInject constructor(
-        @Assisted val savedStateHandle: SavedStateHandle
-): BaseViewModel<FindAccountUseCase>() {
+    useCase: FindAccountUseCase,
+    private val accountRepository: AccountRepository,
+    @Assisted val savedStateHandle: SavedStateHandle
+): BaseViewModel<FindAccountUseCase>(useCase) {
 
     private val _findEmailStateTag = MutableLiveData("view_normal")
 
-
     val findEmailStateTag: LiveData<String> = _findEmailStateTag
-
-
 
     val confirmCheckEmailAddress: () -> Unit = {
         if(java.util.Random().nextBoolean()) {

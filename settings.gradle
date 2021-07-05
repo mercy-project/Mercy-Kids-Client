@@ -3,3 +3,4 @@ include ':component'
 include ':base'
 include ':app'
 rootProject.name = "Mercy-Kids-Client"
+include ':repository'

@@ -1,6 +1,6 @@
 package com.mercy.kids.base.extension
 
-import com.google.firebase.firestore.QuerySnapshot
+// import com.google.firebase.firestore.QuerySnapshot
 import com.squareup.moshi.Moshi
 
 fun <T> Map<String, Any?>.toCustomDataType(moshi: Moshi, clazz: Class<T>, dataOnNull: T): T {
@@ -11,6 +11,7 @@ fun <T> Map<String, Any>?.toCustomDataType(moshi: Moshi, clazz: Class<T>): T? {
     return moshi.adapter(clazz).fromJsonValue(this)
 }
 
+/*
 fun <T> QuerySnapshot?.toCustomListDataType(moshi: Moshi, clazz: Class<T>, dataOnNull: T): List<T> {
     return this?.documents?.map {
         it.data.toCustomDataType(moshi, clazz) ?: dataOnNull
@@ -22,3 +23,4 @@ fun <T> QuerySnapshot?.toCustomListDataType(moshi: Moshi, clazz: Class<T>): List
         it.data.toCustomDataType(moshi, clazz)
     } ?: listOf()
 }
+ */

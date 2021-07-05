@@ -1,4 +1,4 @@
-package com.mercy.kids.client.login.activity
+package com.mercy.kids.client.account.activity
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,16 +9,19 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.mercy.kids.base.DataBindingActivity
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.ActivityFindAccountBinding
-import com.mercy.kids.client.login.fragment.FindAccountPagerAdapter
-import com.mercy.kids.client.login.fragment.FindAccountTabFragment
-import com.mercy.kids.client.login.viewmodel.FindAccountViewModel
+import com.mercy.kids.client.account.fragment.FindAccountPagerAdapter
+import com.mercy.kids.client.account.fragment.FindAccountTabFragment
+import com.mercy.kids.client.account.viewmodel.FindAccountViewModel
+import dagger.hilt.EntryPoint
+import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.components.ActivityComponent
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class FindAccountActivity(
-        override val layoutResId: Int = R.layout.activity_find_account
-) : DataBindingActivity<ActivityFindAccountBinding>(), TabLayoutMediator.TabConfigurationStrategy {
+class FindAccountActivity: DataBindingActivity<ActivityFindAccountBinding>(), TabLayoutMediator.TabConfigurationStrategy {
+
+    override val layoutResId: Int = R.layout.activity_find_account
 
     private val viewModel by viewModels<FindAccountViewModel>()
 
