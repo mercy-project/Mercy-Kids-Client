@@ -50,7 +50,6 @@ android {
         targetCompatibility(ext.compiler.javaVersion)
     }
 
-    /*
     signingConfigs {
         release {
             def keystoreProperties = new Properties()
@@ -70,7 +69,6 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-     */
 
     buildTypes {
         debug {

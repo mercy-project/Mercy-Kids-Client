@@ -44,6 +44,7 @@ ext {
     lifecycleext='2.2.0'
     webkit='1.4.0'
     glide = '4.11.0'
+    exoplayer = '2.14.1'
     
     navigation='2.3.2'
     roomversion='2.2.6'
@@ -100,7 +101,11 @@ ext {
             "androidx.constraintlayout:constraintlayout:$constraintlayout",
             "com.google.android.material:material:$material",
             "androidx.webkit:webkit:$webkit",
-            "com.github.bumptech.glide:glide:$glide"
+            "com.github.bumptech.glide:glide:$glide",
+
+            "com.google.android.exoplayer:exoplayer-core:$exoplayer",
+            "com.google.android.exoplayer:exoplayer-dash:$exoplayer",
+            "com.google.android.exoplayer:exoplayer-ui:$exoplayer"
     ]
 
     navigationDependencies = [
