@@ -139,12 +139,12 @@ ext {
     firebaseDependencies = [
             // 반드시 platform('com.google.firebase:firebase-bom:25.12.0') 먼저 하고 쓰세요.
             "com.google.android.gms:play-services-basement:$playservice_basement",
-            "com.google.android.gms:play-services-auth:$playservice_auth",
+            // "com.google.android.gms:play-services-auth:$playservice_auth",
             // "com.google.android.gms:play-services-ads:$firebaseads",
-            "com.google.firebase:firebase-analytics-ktx",
-            "com.google.firebase:firebase-crashlytics-ktx",
+            // "com.google.firebase:firebase-analytics-ktx",
+            // "com.google.firebase:firebase-crashlytics-ktx",
             // "com.google.firebase:firebase-ads",
-            "com.google.firebase:firebase-firestore-ktx"
+            // "com.google.firebase:firebase-firestore-ktx"
     ]
 
 

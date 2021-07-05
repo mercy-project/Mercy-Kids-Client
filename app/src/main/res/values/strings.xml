@@ -16,6 +16,7 @@
     <string name="login_home_google_login"><u>구글 계정으로 로그인</u></string>
     <string name="login_home_signup">회원가입</string>
     <string name="login_home_find">이메일/비밀번호 찾기</string>
+    <string name="login_home_failed_google_signin">구글 로그인에 실패했습니다. 잠시 뒤 다시 이용해주세요.</string>
 
     <!-- 회원가입 화면 -->
     <string name="sign_up_header_welcome">환영해요</string>

@@ -1,5 +1,6 @@
 *.iml
 .gradle
+/keystore
 /local.properties
 /.idea
 /.idea/caches

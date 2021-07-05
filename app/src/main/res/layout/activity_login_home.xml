@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <data>
+        <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.mercy.kids.client.login.viewmodel.LoginHomeViewModel" />
+            type="com.mercy.kids.client.account.viewmodel.LoginHomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,6 +81,7 @@
             android:textSize="15sp"
             android:textColor="#323232"
             android:textStyle="bold"
+            android:onClick="@{(v) -> viewModel.startGoogleLoginFlow.invoke()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -98,14 +100,14 @@
             android:layout_marginBottom="24dp"
             android:onClick="@{(v) -> viewModel.onSignUpButtonClicked.invoke()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+            app:layout_constraintEnd_toStartOf="@+id/btn_login_home_find_account"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:rippleColor="#99AAAAAA" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton2"
+            android:id="@+id/btn_login_home_find_account"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,6 +122,17 @@
             app:layout_constraintStart_toEndOf="@+id/btn_login_home_sign_up"
             app:layout_constraintTop_toTopOf="@+id/btn_login_home_sign_up"
             app:rippleColor="#99AAAAAA" />
+
+        <ProgressBar
+            android:id="@+id/pb_login_home_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

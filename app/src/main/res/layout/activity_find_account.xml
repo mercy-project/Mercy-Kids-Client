@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.mercy.kids.client.login.viewmodel.FindAccountViewModel" />
+            type="com.mercy.kids.client.account.viewmodel.FindAccountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
