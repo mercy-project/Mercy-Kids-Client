@@ -45,8 +45,9 @@ ext {
     webkit='1.4.0'
     glide = '4.11.0'
     exoplayer = '2.14.1'
+    paging = '3.0.0'
     
-    navigation='2.3.2'
+    navigation='2.4.0-alpha01'
     roomversion='2.2.6'
     roomdebug='1.0.6'
     datastore='1.0.0-alpha06'
@@ -99,10 +100,10 @@ ext {
     uiDependencies = [
             "androidx.appcompat:appcompat:$appcompat",
             "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            "androidx.paging:paging-runtime-ktx:$paging",
             "com.google.android.material:material:$material",
             "androidx.webkit:webkit:$webkit",
             "com.github.bumptech.glide:glide:$glide",
-
             "com.google.android.exoplayer:exoplayer-core:$exoplayer",
             "com.google.android.exoplayer:exoplayer-dash:$exoplayer",
             "com.google.android.exoplayer:exoplayer-ui:$exoplayer"

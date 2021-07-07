@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main_activity"
+    app:startDestination="@id/tabRecommendFragment">
+
+    <fragment
+        android:id="@+id/tabRecommendFragment"
+        android:name="com.mercy.kids.client.main.fragment.TabRecommendFragment"
+        android:label="TabRecommendFragment"
+        tools:layout="@layout/layout_main_tab_recommend"/>
+
+    <fragment
+        android:id="@+id/tabUploadFragment"
+        android:name="com.mercy.kids.client.main.fragment.TabUploadFragment"
+        android:label="TabUploadFragment"
+        tools:layout="@layout/layout_main_tab_upload"/>
+
+    <fragment
+        android:id="@+id/tabStorageFragment"
+        android:name="com.mercy.kids.client.main.fragment.TabStorageFragment"
+        android:label="TabStorageFragment"
+        tools:layout="@layout/layout_main_tab_storage"/>
+</navigation>

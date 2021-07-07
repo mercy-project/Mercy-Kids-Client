@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tabRecommendFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/main_menu_home" />
+    <item
+        android:id="@+id/tabUploadFragment"
+        android:icon="@drawable/ic_baseline_backup_24"
+        android:title="@string/main_menu_upload" />
+    <item
+        android:id="@+id/tabStorageFragment"
+        android:icon="@drawable/ic_baseline_subscriptions_24"
+        android:title="@string/main_menu_storage" />
+</menu>

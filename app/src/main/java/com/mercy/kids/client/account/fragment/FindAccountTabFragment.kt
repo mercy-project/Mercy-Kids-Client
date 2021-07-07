@@ -3,7 +3,7 @@ package com.mercy.kids.client.account.fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.mercy.kids.base.DataBindingFragment
+import com.mercy.kids.base.component.DataBindingFragment
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.FragmentFindEmailBinding
 import com.mercy.kids.client.databinding.FragmentFindPasswordBinding

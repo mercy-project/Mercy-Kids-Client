@@ -3,18 +3,17 @@ package com.mercy.kids.client.account.activity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
-import com.mercy.kids.base.DataBindingActivity
+import com.mercy.kids.base.component.DataBindingActivity
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.ActivitySignUpBinding
-import com.mercy.kids.client.account.usecase.SignUpUseCase
 import com.mercy.kids.client.account.viewmodel.SignUpViewModel
 import com.mercy.kids.component.edittext.signup.PasswordConfirmValidator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SignUpActivity: DataBindingActivity<ActivitySignUpBinding>() {
-
+class SignUpActivity(
     override val layoutResId: Int = R.layout.activity_sign_up
+): DataBindingActivity<ActivitySignUpBinding>() {
 
     private val viewModel by viewModels<SignUpViewModel>()
 

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/expand"
+        motion:constraintSetEnd="@+id/collapse"
+        motion:duration="1000"
+        motion:motionInterpolator="easeInOut">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@+id/video_player_container"
+            motion:touchAnchorSide="bottom" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/video_player"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/video_player_container"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/image_clear"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/image_play"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/video_title"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+            <KeyPosition
+                motion:framePosition="90"
+                motion:curveFit="linear"
+                motion:motionTarget="@id/channel_name"
+                motion:percentX="0"
+                motion:percentWidth="0"/>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@id/expand">
+        <Constraint
+            android:id="@+id/video_player_container"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+            android:id="@+id/video_player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="@id/video_player_container"
+            motion:layout_constraintStart_toStartOf="@id/video_player_container"
+            motion:layout_constraintEnd_toEndOf="@id/video_player_container"/>
+
+        <Constraint
+            android:id="@+id/video_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintHorizontal_bias="1"
+            motion:layout_constraintHorizontal_chainStyle="packed"
+            motion:layout_constraintStart_toEndOf="@id/video_player"
+            motion:layout_constraintEnd_toStartOf="@id/image_play"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container">
+            <PropertySet android:alpha="0"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/channel_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toEndOf="@id/video_player"
+            motion:layout_constraintEnd_toStartOf="@id/image_play"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container">
+            <PropertySet android:alpha="0"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/image_play"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toEndOf="@id/video_title"
+            motion:layout_constraintEnd_toStartOf="@id/image_clear"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container">
+            <PropertySet android:alpha="0"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/image_clear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toEndOf="@id/image_play"
+            motion:layout_constraintEnd_toEndOf="@id/video_player_container"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container">
+            <PropertySet android:alpha="0"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/description_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toBottomOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@id/collapse">
+        <Constraint
+            android:id="@+id/video_player_container"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            motion:layout_constrainedWidth="true"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+            android:id="@+id/video_player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="H, 1:2.5"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="@id/video_player_container"
+            motion:layout_constraintStart_toStartOf="@id/video_player_container"/>
+
+        <Constraint
+            android:id="@+id/video_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constrainedWidth="true"
+            motion:layout_constraintVertical_chainStyle="packed"
+            motion:layout_constraintHorizontal_chainStyle="packed"
+            motion:layout_constraintStart_toEndOf="@id/video_player"
+            motion:layout_constraintEnd_toStartOf="@id/image_play"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container"
+            motion:layout_constraintBottom_toTopOf="@id/channel_name">
+            <PropertySet android:alpha="1"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/channel_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            motion:flow_horizontalBias="1"
+            motion:layout_constraintStart_toEndOf="@id/video_player"
+            motion:layout_constraintEnd_toStartOf="@id/image_play"
+            motion:layout_constraintTop_toBottomOf="@id/video_title"
+            motion:layout_constraintBottom_toBottomOf="@id/video_player_container">
+            <PropertySet android:alpha="1"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/image_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            motion:layout_constraintStart_toEndOf="@id/channel_name"
+            motion:layout_constraintEnd_toStartOf="@id/image_clear"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="@id/video_player_container">
+            <PropertySet android:alpha="1"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/image_clear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintStart_toEndOf="@id/image_play"
+            motion:layout_constraintEnd_toEndOf="@id/video_player_container"
+            motion:layout_constraintTop_toTopOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="@id/video_player_container">
+            <PropertySet android:alpha="1"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/description_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toBottomOf="@id/video_player_container"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+    </ConstraintSet>
+
+</MotionScene>

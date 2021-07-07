@@ -6,22 +6,19 @@ import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.mercy.kids.base.DataBindingActivity
+import com.mercy.kids.base.component.DataBindingActivity
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.ActivityFindAccountBinding
 import com.mercy.kids.client.account.fragment.FindAccountPagerAdapter
 import com.mercy.kids.client.account.fragment.FindAccountTabFragment
 import com.mercy.kids.client.account.viewmodel.FindAccountViewModel
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.components.ActivityComponent
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class FindAccountActivity: DataBindingActivity<ActivityFindAccountBinding>(), TabLayoutMediator.TabConfigurationStrategy {
-
+class FindAccountActivity(
     override val layoutResId: Int = R.layout.activity_find_account
+): DataBindingActivity<ActivityFindAccountBinding>(), TabLayoutMediator.TabConfigurationStrategy {
 
     private val viewModel by viewModels<FindAccountViewModel>()
 

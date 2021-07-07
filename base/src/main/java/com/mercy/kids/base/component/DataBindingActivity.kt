@@ -1,4 +1,4 @@
-package com.mercy.kids.base
+package com.mercy.kids.base.component
 
 import android.os.Bundle
 import androidx.annotation.DrawableRes

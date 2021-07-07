@@ -58,4 +58,9 @@
     <string name="find_email_exist">가입된 이메일입니다.</string>
     <string name="find_email_empty">입력한 정보와\n일치하는 이메일이 없습니다.\n다시 한번 확인해 주세요 :)</string>
 
+    <!-- 메인 화면 -->
+    <string name="main_menu_home">홈</string>
+    <string name="main_menu_upload">업로드</string>
+    <string name="main_menu_storage">보관함</string>
+
 </resources>

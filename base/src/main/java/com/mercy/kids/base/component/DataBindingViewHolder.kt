@@ -1,4 +1,4 @@
-package com.mercy.kids.base
+package com.mercy.kids.base.component
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,6 +20,22 @@ abstract class DataBindingViewHolder<T: Any, B: ViewDataBinding>(
         )
     )
 
-    abstract fun bindData(data: T)
+    protected var itemData: T? = null
+    protected var isAttached: Boolean = false
+        private set
+
+    open fun bindData(data: T?) {
+        itemData = data
+    }
+
+    open fun onAttachedToWindow() {
+        isAttached = true
+    }
+
+    open fun onDetachedToWindow() {
+        isAttached = false
+    }
+
+    open fun onViewRecycled() = Unit
 
 }
