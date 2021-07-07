@@ -14,7 +14,7 @@ import com.mercy.kids.client.R
 import com.mercy.kids.client.account.activity.FindAccountActivity
 import com.mercy.kids.client.account.activity.SignUpActivity
 import com.mercy.kids.client.account.usecase.LoginHomeUseCase
-import com.mercy.kids.repository.AccountRepository
+import com.mercy.kids.repository.account.AccountRepository
 
 class LoginHomeViewModel @ViewModelInject constructor(
     useCase: LoginHomeUseCase,

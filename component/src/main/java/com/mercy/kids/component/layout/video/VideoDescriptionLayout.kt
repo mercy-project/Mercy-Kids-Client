@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.mercy.kids.base.extension.dp
 import com.mercy.kids.component.databinding.ViewVideoDescriptionBinding
 
@@ -25,6 +27,16 @@ class VideoDescriptionLayout @JvmOverloads constructor(
         set(value) {
             field = value
             binding.videoMetadata.text = value
+        }
+
+    var channelThumbnail: String = ""
+        set(value) {
+            field = value
+            Glide.with(context)
+                .load(value)
+                .apply(RequestOptions.circleCropTransform())
+                .into(binding.channelProfileImage)
+                .clearOnDetach()
         }
 
     init {

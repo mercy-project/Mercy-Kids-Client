@@ -1,6 +1,6 @@
-package com.mercy.kids.repository
+package com.mercy.kids.repository.account
 
-import com.mercy.kids.remote.AccountApi
+import com.mercy.kids.remote.account.AccountApi
 import javax.inject.Inject
 
 class AccountRepositoryImpl @Inject constructor(

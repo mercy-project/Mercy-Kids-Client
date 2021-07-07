@@ -1,4 +1,4 @@
-package com.mercy.kids.remote
+package com.mercy.kids.remote.account
 
 import retrofit2.Response
 import retrofit2.http.Field

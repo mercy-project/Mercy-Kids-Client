@@ -12,7 +12,7 @@ import com.mercy.kids.base.extension.safeValue
 import com.mercy.kids.base.extension.timerFlow
 import com.mercy.kids.client.R
 import com.mercy.kids.client.account.usecase.SignUpUseCase
-import com.mercy.kids.repository.AccountRepository
+import com.mercy.kids.repository.account.AccountRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

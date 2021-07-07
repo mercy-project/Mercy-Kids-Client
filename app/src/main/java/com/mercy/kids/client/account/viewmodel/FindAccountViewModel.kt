@@ -8,7 +8,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.mercy.kids.base.BaseViewModel
 import com.mercy.kids.base.extension.safeValue
 import com.mercy.kids.client.account.usecase.FindAccountUseCase
-import com.mercy.kids.repository.AccountRepository
+import com.mercy.kids.repository.account.AccountRepository
 
 class FindAccountViewModel @ViewModelInject constructor(
     useCase: FindAccountUseCase,

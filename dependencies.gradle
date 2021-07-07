@@ -69,6 +69,7 @@ ext {
     kotlinDependencies = [
             "org.jetbrains.kotlin:kotlin-stdlib:$kotlin",
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine",
+            "androidx.paging:paging-runtime-ktx:$paging",
             "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1"
     ]
     
@@ -100,7 +101,6 @@ ext {
     uiDependencies = [
             "androidx.appcompat:appcompat:$appcompat",
             "androidx.constraintlayout:constraintlayout:$constraintlayout",
-            "androidx.paging:paging-runtime-ktx:$paging",
             "com.google.android.material:material:$material",
             "androidx.webkit:webkit:$webkit",
             "com.github.bumptech.glide:glide:$glide",

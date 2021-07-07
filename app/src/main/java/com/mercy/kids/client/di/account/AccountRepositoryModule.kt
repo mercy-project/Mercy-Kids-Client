@@ -1,8 +1,8 @@
 package com.mercy.kids.client.di.account
 
-import com.mercy.kids.remote.AccountApi
-import com.mercy.kids.repository.AccountRepository
-import com.mercy.kids.repository.AccountRepositoryImpl
+import com.mercy.kids.remote.account.AccountApi
+import com.mercy.kids.repository.account.AccountRepository
+import com.mercy.kids.repository.account.AccountRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

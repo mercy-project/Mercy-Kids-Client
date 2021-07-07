@@ -1,4 +1,4 @@
-package com.mercy.kids.repository
+package com.mercy.kids.repository.account
 
 interface AccountRepository {
 

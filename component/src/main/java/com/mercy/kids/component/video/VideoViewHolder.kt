@@ -1,18 +1,23 @@
 package com.mercy.kids.component.video
 
+import android.view.ViewGroup
+import android.view.ViewParent
+import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.source.MediaSourceFactory
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import com.mercy.kids.base.component.DataBindingViewHolder
 import javax.inject.Inject
 
-abstract class VideoViewHolder<T: VideoViewHolder.VideoData, B: ViewDataBinding>(
-    binding: B
-): DataBindingViewHolder<T, B>(binding) {
+abstract class VideoViewHolder<B: ViewDataBinding, T: VideoViewHolder.VideoData>: DataBindingViewHolder<B, T> {
+
+    constructor(binding: B): super(binding)
+
+    constructor(parent: ViewGroup, @LayoutRes resId: Int): super(parent, resId)
 
     @Inject lateinit var videoPlayer: VideoPlayer
 
