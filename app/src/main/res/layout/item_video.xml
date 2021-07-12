@@ -6,7 +6,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:foreground="?attr/selectableItemBackground">
 
         <com.google.android.exoplayer2.ui.PlayerView
             android:id="@+id/thumbnail_player"
@@ -23,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/view_video_description"
+            app:additionOptionsMenu="@menu/menu_video_description_option"
             app:layout_constraintTop_toBottomOf="@id/thumbnail_player"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

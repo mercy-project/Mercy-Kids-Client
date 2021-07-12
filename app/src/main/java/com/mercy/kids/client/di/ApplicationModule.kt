@@ -29,11 +29,9 @@ abstract class ApplicationModule {
 
         @Provides
         @Singleton
-        fun provideExoPlayer(application: Application): ExoPlayer = SimpleExoPlayer.Builder(application.applicationContext).build()
+        fun provideVideoPlayer(application: Application): VideoPlayer {
+            return VideoPlayerImpl(application.applicationContext)
+        }
     }
-
-    @Binds
-    @Singleton
-    abstract fun bindVideoPlayer(impl: VideoPlayerImpl): VideoPlayer
 
 }

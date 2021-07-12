@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.mercy.kids.base.component.DataBindingActivity
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.ActivityMainBinding
+import com.mercy.kids.client.main.fragment.VideoPlayerFragment
 import com.mercy.kids.client.main.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,6 +27,7 @@ class MainActivity(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupNavigation()
+        hideVideoPlayerFragment()
     }
 
     private fun setupNavigation() {
@@ -33,4 +35,12 @@ class MainActivity(
         navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
     }
+
+    private fun hideVideoPlayerFragment() {
+        val fragment = supportFragmentManager.findFragmentById(R.id.video_player_fragment_container) as VideoPlayerFragment
+        supportFragmentManager.beginTransaction()
+            .hide(fragment)
+            .commit()
+    }
+
 }

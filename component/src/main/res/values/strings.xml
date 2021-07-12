@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="video_desc_menu_save">저장</string>
+    <string name="video_desc_menu_share">공유</string>
+    <string name="video_desc_menu_delete">삭제</string>
+</resources>

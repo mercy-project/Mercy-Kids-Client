@@ -1,5 +1,9 @@
 package com.mercy.kids.client.main.fragment
 
+import android.content.Context
+import android.os.Bundle
+import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -21,6 +25,25 @@ class VideoPlayerFragment(
     override val bindingVariable: (LayoutMainVideoPlayerBinding) -> Unit = {
         it.viewModel = viewModel
         binding.playerMotionLayout.setTransitionListener(transitionListener)
+    }
+
+    private val backPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            if(isHidden) {
+                return
+            }
+            binding.playerMotionLayout.transitionToStart()
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        requireActivity().onBackPressedDispatcher.addCallback(backPressedCallback)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.playerMotionLayout.transitionToEnd()
     }
     
     private val transitionListener = object: MotionLayout.TransitionListener {

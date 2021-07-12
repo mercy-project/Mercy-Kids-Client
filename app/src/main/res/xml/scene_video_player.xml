@@ -3,8 +3,8 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetStart="@+id/expand"
-        motion:constraintSetEnd="@+id/collapse"
+        motion:constraintSetStart="@+id/collapse"
+        motion:constraintSetEnd="@+id/expand"
         motion:duration="1000"
         motion:motionInterpolator="easeInOut">
 
@@ -15,37 +15,37 @@
 
         <KeyFrameSet>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_player"
                 motion:percentX="0"
                 motion:percentWidth="0"/>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_player_container"
                 motion:percentX="0"
                 motion:percentWidth="0"/>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/image_clear"
                 motion:percentX="0"
                 motion:percentWidth="0"/>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/image_play"
                 motion:percentX="0"
                 motion:percentWidth="0"/>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_title"
                 motion:percentX="0"
                 motion:percentWidth="0"/>
             <KeyPosition
-                motion:framePosition="90"
+                motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/channel_name"
                 motion:percentX="0"
