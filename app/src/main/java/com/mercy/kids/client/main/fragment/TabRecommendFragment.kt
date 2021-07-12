@@ -2,16 +2,13 @@ package com.mercy.kids.client.main.fragment
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.paging.map
 import com.mercy.kids.base.component.DataBindingFragment
 import com.mercy.kids.client.R
 import com.mercy.kids.client.databinding.LayoutMainTabRecommendBinding
 import com.mercy.kids.client.main.adapter.RecommendListRA
 import com.mercy.kids.client.main.holder.VideoItemVH
-import com.mercy.kids.client.main.usecase.Mapper
 import com.mercy.kids.client.main.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -46,25 +43,7 @@ class TabRecommendFragment(
         loadRecommendVideoList()
     }
 
-    override fun onItemClicked(data: RecommendListRA.Data) {
-        activity?.supportFragmentManager?.let {
-            val videoPlayerFragment = it.findFragmentById(R.id.video_player_fragment_container) as VideoPlayerFragment
-            it.beginTransaction()
-                .setCustomAnimations(R.anim.transition_open_video_player, R.anim.nav_default_pop_exit_anim)
-                .show(videoPlayerFragment)
-                .commit()
-        }
-    }
-
-    override fun saveVideoItem(data: RecommendListRA.Data) {
-
-    }
-
-    override fun shareVideoUrl(data: RecommendListRA.Data) {
-
-    }
-
-    override fun deleteVideo(data: RecommendListRA.Data) {
+    override fun openChannelInfo(data: RecommendListRA.Data) {
 
     }
 

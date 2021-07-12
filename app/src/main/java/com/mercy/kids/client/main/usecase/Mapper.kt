@@ -7,6 +7,7 @@ object Mapper {
 
     fun toUiData(data: RecommendVideo): RecommendListRA.Data {
         return RecommendListRA.Data(
+            videoId = data.videoId,
             videoUrl = data.videoUrl,
             title = data.title,
             metadata = "${data.channelName} | ${data.views}회 | ${data.uploadTime}",

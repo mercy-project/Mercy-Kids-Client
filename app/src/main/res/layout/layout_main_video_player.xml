@@ -9,12 +9,13 @@
             type="com.mercy.kids.client.main.viewmodel.VideoPlayerViewModel" />
     </data>
 
-    <androidx.constraintlayout.motion.widget.MotionLayout
+    <com.mercy.kids.component.layout.video.VideoPlayerMotionLayout
         android:id="@+id/playerMotionLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/transparent"
+        android:background="@android:color/transparent"
         app:layoutDescription="@xml/scene_video_player"
+        app:detectTargetViewId="@id/video_player_container"
         tools:context=".main.activity.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,31 +32,32 @@
             android:id="@+id/video_player"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            tools:layout_constraintDimensionRatio="H, 1:2.5"
+            tools:ignore="ContentDescription"
             tools:layout_constraintBottom_toBottomOf="@id/video_player_container"
+            tools:layout_constraintDimensionRatio="H, 1:2.5"
             tools:layout_constraintStart_toStartOf="@id/video_player_container"
-            tools:layout_constraintTop_toTopOf="@id/video_player_container"
-            tools:ignore="ContentDescription" />
+            tools:layout_constraintTop_toTopOf="@id/video_player_container" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/video_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:alpha="0"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:singleLine="true"
             android:ellipsize="marquee"
-            tools:layout_marginBottom="4dp"
-            tools:layout_marginStart="8dp"
-            tools:layout_marginEnd="8dp"
-            tools:layout_constraintVertical_bias="0.3"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="[비디오 이름] Video name official"
             tools:layout_constrainedWidth="true"
-            tools:layout_constraintVertical_chainStyle="packed"
-            tools:layout_constraintStart_toEndOf="@id/video_player"
+            tools:layout_constraintBottom_toTopOf="@id/channel_name"
             tools:layout_constraintEnd_toStartOf="@id/image_play"
+            tools:layout_constraintStart_toEndOf="@id/video_player"
             tools:layout_constraintTop_toTopOf="@id/video_player_container"
-            tools:layout_constraintBottom_toTopOf="@id/channel_name" />
+            tools:layout_constraintVertical_bias="0.3"
+            tools:layout_constraintVertical_chainStyle="packed"
+            tools:layout_marginBottom="4dp"
+            tools:layout_marginEnd="8dp"
+            tools:layout_marginStart="8dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/channel_name"
@@ -66,6 +68,7 @@
             android:textColor="@color/gray"
             android:singleLine="true"
             android:ellipsize="marquee"
+            tools:text="[채널 이름] official"
             tools:layout_constrainedWidth="true"
             tools:layout_marginStart="8dp"
             tools:layout_marginEnd="8dp"
@@ -114,6 +117,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/video_player_container" />
 
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+    </com.mercy.kids.component.layout.video.VideoPlayerMotionLayout>
 
 </layout>

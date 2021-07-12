@@ -7,6 +7,24 @@
         motion:constraintSetEnd="@id/expand"
         motion:duration="1000"
         motion:motionInterpolator="easeInOut">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="10"
+                motion:motionTarget="@id/video_player_fragment_container">
+                <CustomAttribute
+                    motion:attributeName="BackgroundColor"
+                    motion:customColorValue="@android:color/transparent"/>
+            </KeyAttribute>
+            <KeyAttribute
+                motion:framePosition="90"
+                motion:motionTarget="@id/video_player_fragment_container">
+                <CustomAttribute
+                    motion:attributeName="BackgroundColor"
+                    motion:customColorValue="@color/exo_black_opacity_60"/>
+            </KeyAttribute>
+        </KeyFrameSet>
+
     </Transition>
 
     <ConstraintSet android:id="@+id/collapse">
@@ -14,6 +32,7 @@
             android:id="@id/main_toolbar"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
+            android:alpha="1"
             motion:layout_constraintVertical_chainStyle="packed"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +50,7 @@
             android:id="@id/bottom_nav"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
+            android:alpha="1"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
@@ -50,6 +70,7 @@
             android:id="@id/main_toolbar"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:alpha="0"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintBottom_toTopOf="parent"/>
@@ -65,6 +86,7 @@
             android:id="@id/bottom_nav"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:alpha="0"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toBottomOf="parent"/>

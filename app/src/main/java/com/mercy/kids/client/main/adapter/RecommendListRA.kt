@@ -1,13 +1,9 @@
 package com.mercy.kids.client.main.adapter
 
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.appcompat.widget.PopupMenu
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.google.android.exoplayer2.ui.PlayerView
 import com.mercy.kids.client.R
-import com.mercy.kids.client.databinding.ItemVideoBinding
 import com.mercy.kids.client.main.holder.VideoItemVH
 import com.mercy.kids.component.video.VideoViewHolder
 import javax.inject.Inject
@@ -30,11 +26,12 @@ object RecommendVideoComparator: DiffUtil.ItemCallback<RecommendListRA.Data>() {
 
 class RecommendListRA @Inject constructor(
     diffCallback: DiffUtil.ItemCallback<Data>,
-    private val event: VideoItemVH.Event
+    private val videoAction: VideoViewHolder.Action,
+    private val viewHolderEvent: VideoItemVH.Event
 ): PagingDataAdapter<RecommendListRA.Data, VideoItemVH>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoItemVH {
-        return VideoItemVH(parent, R.layout.item_video, event)
+        return VideoItemVH(parent, R.layout.item_video, videoAction, viewHolderEvent)
     }
 
     override fun onBindViewHolder(holder: VideoItemVH, position: Int) {
@@ -43,11 +40,12 @@ class RecommendListRA @Inject constructor(
     }
 
     class Data(
+        videoId: Int,
         videoUrl: String,
-        val title: String,
+        title: String,
         val metadata: String,
         val channelThumbnail: String
-    ): VideoViewHolder.VideoData(videoUrl) {
+    ): VideoViewHolder.VideoData(videoId, videoUrl, title) {
 
         override fun equals(other: Any?): Boolean {
             return if(other != null && other is Data) {

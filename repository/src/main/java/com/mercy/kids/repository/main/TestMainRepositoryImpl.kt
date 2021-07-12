@@ -22,6 +22,7 @@ class TestMainRepositoryImpl @Inject constructor(
         return RecommendVideoApiResult(
             listOf(
                 RecommendVideo(
+                    videoId = 0,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -30,6 +31,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 1,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -38,6 +40,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 2,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -46,6 +49,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 3,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -54,6 +58,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 4,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -62,6 +67,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 5,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -70,6 +76,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 6,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",
@@ -78,6 +85,7 @@ class TestMainRepositoryImpl @Inject constructor(
                     uploadTime = System.currentTimeMillis()
                 ),
                 RecommendVideo(
+                    videoId = 7,
                     videoUrl = "https://youtu.be/lfsghY4sNlk?list=PLLoamEZ5bJuFxrpotAhDoXP_rdgQzgOqD",
                     title = "과거 코로나19에 감염되었던 사람(무증상, 증상 감염자)들도 백신 접종 대상인가요? [코로나19 백신 질문과 답변]",
                     channelThumbnailUrl = "https://yt3.ggpht.com/ytc/AKedOLRx1o4FfsK5isI9U-EHzAt7S57Knoyv7MoEIGKpGw=s176-c-k-c0x00ffffff-no-rj",

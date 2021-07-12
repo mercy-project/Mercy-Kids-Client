@@ -6,6 +6,7 @@ data class RecommendVideoApiResult(
 )
 
 data class RecommendVideo(
+    val videoId: Int,
     val videoUrl: String,
     val title: String,
     val channelThumbnailUrl: String,

@@ -5,7 +5,7 @@
     <Transition
         motion:constraintSetStart="@+id/collapse"
         motion:constraintSetEnd="@+id/expand"
-        motion:duration="1000"
+        motion:duration="500"
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
@@ -18,38 +18,38 @@
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_player"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
             <KeyPosition
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_player_container"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
             <KeyPosition
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/image_clear"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
             <KeyPosition
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/image_play"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
             <KeyPosition
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/video_title"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
             <KeyPosition
                 motion:framePosition="10"
                 motion:curveFit="linear"
                 motion:motionTarget="@id/channel_name"
-                motion:percentX="0"
-                motion:percentWidth="0"/>
+                motion:percentX="1"
+                motion:percentWidth="1"/>
         </KeyFrameSet>
     </Transition>
 
@@ -87,7 +87,7 @@
             android:id="@+id/channel_name"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintStart_toEndOf="@id/video_player"
+            motion:layout_constraintStart_toStartOf="@id/video_title"
             motion:layout_constraintEnd_toStartOf="@id/image_play"
             motion:layout_constraintTop_toTopOf="@id/video_player_container">
             <PropertySet android:alpha="0"/>

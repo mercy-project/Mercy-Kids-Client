@@ -37,4 +37,8 @@
     <declare-styleable name="VideoDescriptionLayout">
         <attr name="additionOptionsMenu" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="VideoPlayerMotionLayout">
+        <attr name="detectTargetViewId" format="reference"/>
+    </declare-styleable>
 </resources>

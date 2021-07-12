@@ -29,10 +29,12 @@ class VideoPlayerFragment(
 
     private val backPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            if(isHidden) {
-                return
+            if(isVisible && binding.playerMotionLayout.currentState == R.id.expand) {
+                binding.playerMotionLayout.transitionToStart()
+            } else {
+                isEnabled = false
+                activity?.onBackPressed()
             }
-            binding.playerMotionLayout.transitionToStart()
         }
     }
 

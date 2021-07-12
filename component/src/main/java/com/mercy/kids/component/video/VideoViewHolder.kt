@@ -1,7 +1,6 @@
 package com.mercy.kids.component.video
 
 import android.view.ViewGroup
-import android.view.ViewParent
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import com.google.android.exoplayer2.Player
@@ -13,29 +12,40 @@ import com.google.android.exoplayer2.util.Util
 import com.mercy.kids.base.component.DataBindingViewHolder
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ApplicationComponent
-import javax.inject.Inject
 
 abstract class VideoViewHolder<B: ViewDataBinding, T: VideoViewHolder.VideoData>: DataBindingViewHolder<B, T> {
 
     @EntryPoint
     @InstallIn(ApplicationComponent::class)
-    interface VideoPlayerProviderEntryPoint {
+    interface SingletonEntryPoint {
         fun exoplayer(): VideoPlayer
     }
 
-    constructor(binding: B): super(binding)
+    constructor(binding: B, action: Action): super(binding) {
+        this.videoAction = action
+    }
 
-    constructor(parent: ViewGroup, @LayoutRes resId: Int): super(parent, resId)
+    constructor(parent: ViewGroup, @LayoutRes resId: Int, action: Action): super(parent, resId) {
+        this.videoAction = action
+    }
 
     open class VideoData(
-        val videoUrl: String
+        val videoId: Int,
+        val videoUrl: String,
+        val title: String,
     )
 
     abstract val playerView: PlayerView
-    private val videoPlayer: VideoPlayer
+    private val videoAction: Action
+
+    private val videoPlayer: VideoPlayer = EntryPointAccessors.fromApplication(
+        itemView.context,
+        SingletonEntryPoint::class.java
+    ).exoplayer()
+
     private val mediaSourceFactory: MediaSourceFactory
 
     private val videoEventListener = object: Player.Listener {
@@ -51,12 +61,6 @@ abstract class VideoViewHolder<B: ViewDataBinding, T: VideoViewHolder.VideoData>
     }
 
     init {
-        val hiltEntryPoint = EntryPointAccessors.fromApplication(
-            itemView.context.applicationContext,
-            VideoPlayerProviderEntryPoint::class.java
-        )
-        videoPlayer = hiltEntryPoint.exoplayer()
-
         val userAgent = Util.getUserAgent(itemView.context, itemView.context.applicationInfo.name)
         val factory = DefaultDataSourceFactory(itemView.context, userAgent)
         mediaSourceFactory = ProgressiveMediaSource.Factory(factory)
@@ -67,6 +71,13 @@ abstract class VideoViewHolder<B: ViewDataBinding, T: VideoViewHolder.VideoData>
         data?.let {
             // videoPlayer.setVideoUrl(it.videoUrl)
         }
+    }
+
+    interface Action {
+        fun openVideo(data: VideoData)
+        fun save(data: VideoData)
+        fun share(data: VideoData)
+        fun delete(data: VideoData)
     }
 
 }
