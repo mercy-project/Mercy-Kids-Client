@@ -103,13 +103,14 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
+                    android:id="@+id/rg_question_form_00"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/rb_question_form_00_parent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -119,7 +120,7 @@
                         app:buttonTint="#f9d302" />
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/rb_question_form_00_child"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -152,7 +153,7 @@
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tv_name"
+                        android:id="@+id/text_name"
                         android:layout_width="334dp"
                         android:layout_height="50dp"
                         android:background="@drawable/et_round_rectangle"
@@ -171,7 +172,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tv_age"
+                    android:id="@+id/text_age"
                     android:layout_width="334dp"
                     android:layout_height="50dp"
                     android:background="@drawable/et_round_rectangle"
@@ -191,7 +192,7 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:id="@+id/linear_checkbox"
+                    android:id="@+id/layout_question_form_reason"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -216,7 +217,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/linear_checkbox_00"
+                        android:id="@+id/layout_question_form_favorite_character_01"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -224,7 +225,7 @@
                         android:paddingTop="10dp"></LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear_checkbox_01"
+                        android:id="@+id/layout_question_form_favorite_character_02"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
