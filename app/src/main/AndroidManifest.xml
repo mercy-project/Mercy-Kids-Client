@@ -42,6 +42,8 @@
         <activity android:name=".main.activity.MainActivity"
             android:screenOrientation="fullSensor"/>
 
+        <activity android:name="com.backup.myapplication.QuestionFormActivity"/>
+
     </application>
 
 </manifest>

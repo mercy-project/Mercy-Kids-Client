@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -16,8 +17,7 @@ import com.mercy.kids.client.R
 
 val list_reason = arrayOf("아이와 함께 놀기 위해", "아이의 인성교육을 위해", "상황별 동영상이 필요해서(양치,밥,잠자기 등)","아이를 달래기 위해","기타(유아 Tip,청소시간 등)")
 val list_character_favorite = arrayOf("뽀로로", "핑크퐁", "캐리", "콩수니", "헬로카봇", "타요", "로보카폴리", "라바", "겨울왕국", "신비아파트", "디즈니", "미미")
-val tmp_answer = Array<String>(5,{ item->""})
-val question_form_answer = mutableMapOf<String,String>()
+val question_form_answer = mutableMapOf<String,Any>()
 val question_form_list = arrayOf("이용대상","사용자명","나이","이유","선호하는 캐릭터")
 
 class QuestionFormActivity : AppCompatActivity() {
@@ -112,25 +112,33 @@ class QuestionFormActivity : AppCompatActivity() {
 
         val btn_save = findViewById<Button>(R.id.btn_question_form_submit)
         btn_save.setOnClickListener {
-            tmp_answer[0] = findViewById<RadioButton>(rg_00.checkedRadioButtonId).text.toString()
-            tmp_answer[1] = tv_name.text.toString()
-            tmp_answer[2] = tv_age.text.toString()
-            tmp_answer[3] = checked_reason[0]
-            tmp_answer[4] = checked_favorite[0]
             if(isQuestionAnswerValid()){
                 //save
-                var i = 0
                 for(k in question_form_list){
-                    question_form_answer.put(k, tmp_answer[i])
-                    i++
+                    when(k) {
+                        question_form_list[0] -> {
+                            question_form_answer.put(k, findViewById<RadioButton>(rg_00.checkedRadioButtonId).text.toString())
+                        }
+                        question_form_list[1] -> {
+                            question_form_answer.put(k, tv_name.text.toString())
+                        }
+                        question_form_list[2] -> {
+                            question_form_answer.put(k, tv_age.text.toString())
+                        }
+                        question_form_list[3] -> {
+                            question_form_answer.put(k, checked_reason)
+                        }
+                        question_form_list[4] -> {
+                            question_form_answer.put(k, checked_favorite)
+                        }
+                    }
                 }
-                onBackPressed()
-
+                Log.d("Question_Form", "$question_form_answer")
             }else{
                 //알림창 생성
                 val builder = AlertDialog.Builder(this)
-                    .setTitle("아직 프로필이 완성되지 않았습니다. 확인해주세요.")
-                    .setMessage("")
+                    .setTitle("미응답 문항 존재")
+                    .setMessage("아직 프로필이 완성되지 않았습니다. 확인해주세요.")
                     .setPositiveButton("확인"){
                      dialogInterface, i ->
                     }
