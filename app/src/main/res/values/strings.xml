@@ -58,4 +58,12 @@
     <string name="find_email_exist">가입된 이메일입니다.</string>
     <string name="find_email_empty">입력한 정보와\n일치하는 이메일이 없습니다.\n다시 한번 확인해 주세요 :)</string>
 
+    <!-- 설문조사 화면 -->
+    <string name="question_form_who">누가 이용을 할까요?!</string>
+    <string name="question_form_name">이름을 알려주세요.</string>
+    <string name="question_form_age">나이를 알려주세요.</string>
+    <string name="question_form_reason">이용하는 이유는 무엇인가요?</string>
+    <string name="question_form_favorite_character">좋아하는 캐릭터를 선택해주세요!\n3개 이상 선택해주세요.</string>
+    <string name="question_form_missing_input">아직 프로필이 완성되지 않았습니다. 확인해주세요.</string>
+
 </resources>
